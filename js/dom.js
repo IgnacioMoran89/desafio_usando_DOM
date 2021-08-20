@@ -1,4 +1,7 @@
+// Función para el Header
 function header() {
+    //LOGOTIPO
+    /* document.createElement() es para crear un nuevo elemento HTML y adjuntarlo al árbol DOM */
     const div = document.createElement('div');
     div.className = 'py-5 text-center';
     const img = document.createElement('img');
@@ -6,12 +9,14 @@ function header() {
     img.src = 'bootstrap-solid.svg';
     img.width = 72;
     img.height = 72;
-    div.appendChild(img);
+    div.appendChild(img); //appendChild método para agregar un nodo secundario al principal, en ese caso img al div
 
+    //TITULO DEL HEADER
     const h2 = document.createElement('h2');
     h2.appendChild(document.createTextNode('Checkout form'));
     div.appendChild(h2);
 
+    //PARRAFO DEL HEADER
     const p = document.createElement('p');
     p.className = 'lead';
     p.appendChild(document.createTextNode('Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.'));
@@ -20,6 +25,7 @@ function header() {
     return div;
 }
 
+//Función para estructura Items para carro de compras
 function cartsItem(nombre, descripcion, precio, promo=false) {
     const li = document.createElement('li');
     const div = document.createElement('div');
@@ -48,6 +54,7 @@ function cartsItem(nombre, descripcion, precio, promo=false) {
     return li;
 }
 
+//Función Item Promo code
 function promoCode() {
     const form = document.createElement('form');
     form.className = 'card p-2';
@@ -71,6 +78,7 @@ function promoCode() {
     return form;            
 }
 
+//Función contenido container para carro de compras
 function cartsContainer() {
     const container = document.createElement('div');
     container.className = 'col-md-4 order-md-2 mb-4';
@@ -110,6 +118,7 @@ function cartsContainer() {
     return container;
 }
 
+//Función contenido container Billing
 function billingContainer() {
     const containerBill = document.createElement('div');
     containerBill.className = 'col-md-8 order-md-1';
@@ -120,7 +129,6 @@ function billingContainer() {
 
     const formVal = document.createElement('form');
     formVal.className = 'needs-validation';
-    //document.getElementsByClassName("needs-validation").noValidate = true;
     formVal.noValidate = true;
     containerBill.appendChild(formVal);
 
@@ -256,8 +264,6 @@ function billingContainer() {
     divInvalidAddress.appendChild(document.createTextNode('Please enter your shipping address.'));
     divAddress.appendChild(divInvalidAddress);
 
-    //<div class="invalid-feedback">Please enter your shipping address.
-
     const divAddress2 = document.createElement('div');
     divAddress2.className = 'address';
     divAddress2.appendChild(document.createTextNode('Address'));
@@ -387,6 +393,7 @@ function billingContainer() {
     hr2.className = "mb-4";
     formVal.appendChild(hr2);
 
+    //Payment
     const h4Payment = document.createElement('h4');
     h4Payment.className = "mb-3";
     h4Payment.textContent = "Payment";
@@ -537,6 +544,7 @@ function billingContainer() {
     hr3.className = "mb-4";
     formVal.appendChild(hr3);
 
+    //Botón checkout
     const buttonForm = document.createElement('button');
     buttonForm.className = "btn btn-primary btn-lg btn-block";
     buttonForm.type = "submit";
@@ -547,6 +555,7 @@ function billingContainer() {
 }
 
 
+//Función para footer
 function footerLink(texto) {
     const li = document.createElement('li');
     li.className = 'list-inline-item';
